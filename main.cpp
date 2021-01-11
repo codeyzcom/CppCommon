@@ -1,13 +1,17 @@
 #include <iostream>
 #include <chrono>
+#include <random>
 
 #include "lib/multithreading/simple_worker_thread/worker.h"
+#include "lib/algorithms/trees/btree/tree.h"
 
 void run_worker_thread_example();
 
+void run_btree_example();
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    run_worker_thread_example();
+    run_btree_example();
     return 0;
 }
 
@@ -39,7 +43,27 @@ void run_worker_thread_example() {
         w2.wait();
 
         w1.do_sync([] {
-            std::cout << "Last blocking call!";
+            std::cout << "Last blocking call!\n";
         });
     }
+}
+
+void run_btree_example() {
+    std::random_device rd;
+    std::mt19937_64 gen(rd());
+    std::uniform_int_distribution<> distribution(1, 64);
+
+    std::cout << "Start BTree!" << std::endl;
+
+    auto tree = new btree();
+
+    for (int n = 0; n < 50; ++n) {
+        int num = distribution(gen);
+        tree->insert(num);
+        std::cout << "Insert number: " << num << std::endl;
+    }
+
+    std::cout << tree->search(2)->key_value << std::endl;
+
+    std::cout << "Stop BTree!" << std::endl;
 }

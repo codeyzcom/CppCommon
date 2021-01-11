@@ -10,4 +10,6 @@ add_executable(
         main.cpp
         lib/multithreading/simple_worker_thread/worker.cpp
         lib/multithreading/simple_worker_thread/worker.h
+        lib/algorithms/trees/btree/tree.cpp
+        lib/algorithms/trees/btree/tree.h
 )
