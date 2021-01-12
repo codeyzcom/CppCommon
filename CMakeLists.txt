@@ -12,4 +12,6 @@ add_executable(
         lib/multithreading/simple_worker_thread/worker.h
         lib/algorithms/trees/btree/tree.cpp
         lib/algorithms/trees/btree/tree.h
+        lib/design_patterns/creational/singleton.cpp
+        lib/design_patterns/creational/singleton.h
 )

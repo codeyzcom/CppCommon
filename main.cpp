@@ -4,14 +4,15 @@
 
 #include "lib/multithreading/simple_worker_thread/worker.h"
 #include "lib/algorithms/trees/btree/tree.h"
+#include "lib/design_patterns/creational/singleton.h"
 
 void run_worker_thread_example();
-
 void run_btree_example();
+void pattern_singleton_example();
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    run_btree_example();
+    pattern_singleton_example();
     return 0;
 }
 
@@ -66,4 +67,9 @@ void run_btree_example() {
     std::cout << tree->search(2)->key_value << std::endl;
 
     std::cout << "Stop BTree!" << std::endl;
+}
+
+void pattern_singleton_example() {
+    std::cout << Singleton::get_instance().foo() << std::endl;
+
 }
