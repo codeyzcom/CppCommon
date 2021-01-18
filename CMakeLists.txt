@@ -14,4 +14,4 @@ add_executable(
         lib/algorithms/trees/btree/tree.h
         lib/design_patterns/creational/singleton.cpp
         lib/design_patterns/creational/singleton.h
-)
+        lib/algorithms/RAII/basic.h)
